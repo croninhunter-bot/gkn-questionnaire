@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/submit.py": {
-      "runtime": "python3.11"
-    }
-  }
-}

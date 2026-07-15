@@ -94,34 +94,34 @@
       <div class="section-title">① 关于他的思维方式</div>
       <div class="section-desc">宇哥做判断、分析问题时有什么让你印象深刻的习惯或特点？</div>
       <div class="hint-box">💡 比如：他遇到一个陌生领域的问题时会怎么切入？他有没有什么独特的分析框架或提问方式？</div>
-      <textarea data-category="关于他的思维方式" placeholder="写下你的问题或观察…"></textarea>
+      <textarea data-topic="关于他的思维方式" placeholder="写下你的问题或观察…"></textarea>
     </div>
 
     <div class="section">
       <div class="section-title">② 关于他的价值观与判断</div>
       <div class="section-desc">你好奇他在哪些事情上的取舍或态度？</div>
       <div class="hint-box">💡 比如：他如何看待"成功"？他对学术 vs 商业的选择有什么真实想法？他做过什么让你意外的决定？</div>
-      <textarea data-category="关于他的价值观与判断" placeholder="写下你的问题…"></textarea>
+      <textarea data-topic="关于他的价值观与判断" placeholder="写下你的问题…"></textarea>
     </div>
 
     <div class="section">
       <div class="section-title">③ 关于他与人的关系</div>
       <div class="section-desc">作为学生或合作者，你对他与人相处的方式有什么好奇？</div>
       <div class="hint-box">💡 比如：他如何指导/批评人？他信任什么样的人？他有没有什么"没说出口但你能感觉到"的东西？</div>
-      <textarea data-category="关于他与人的关系" placeholder="写下你的问题…"></textarea>
+      <textarea data-topic="关于他与人的关系" placeholder="写下你的问题…"></textarea>
     </div>
 
     <div class="section">
       <div class="section-title">④ 关于他的经历与底色</div>
       <div class="section-desc">你一直想问但没合适机会问的——关于他个人经历、转折点、或任何"八卦但不过界"的问题。</div>
       <div class="hint-box">💡 比如：他有没有某个时刻想过放弃？他年轻时是什么样的？他有没有一些不为人知的习惯或癖好？</div>
-      <textarea data-category="关于他的经历与底色" placeholder="写下你的问题…"></textarea>
+      <textarea data-topic="关于他的经历与底色" placeholder="写下你的问题…"></textarea>
     </div>
 
     <div class="section">
       <div class="section-title">⑤ 自由提问</div>
       <div class="section-desc">以上都没覆盖到？任何你想问宇哥的问题，写在这里。</div>
-      <textarea data-category="自由提问" placeholder="任何问题，不限主题…" style="min-height:100px"></textarea>
+      <textarea data-topic="自由提问" placeholder="任何问题，不限主题…" style="min-height:100px"></textarea>
     </div>
 
     <button class="submit-btn" id="submitBtn" onclick="submitQuestions()">提交问题</button>
@@ -164,7 +164,7 @@ function submitQuestions() {
         fields: {
           Brief: brief(text),
           'Your Question': text,
-          Category: ta.getAttribute('data-category')
+          Topic: ta.getAttribute('data-topic')
         }
       });
     }
