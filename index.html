@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>向宇哥提问 · 匿名征集</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Helvetica Neue", sans-serif;
+    background: #f7f7f5;
+    color: #1a1a1a;
+    line-height: 1.7;
+    padding: 20px;
+  }
+  .container { max-width: 640px; margin: 40px auto; }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px 32px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  h1 { font-size: 22px; font-weight: 600; margin-bottom: 8px; letter-spacing: .5px; }
+  .subtitle { font-size: 14px; color: #888; margin-bottom: 28px; line-height: 1.6; }
+  .section { margin-bottom: 28px; }
+  .section-title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+  .section-desc { font-size: 13px; color: #777; margin-bottom: 10px; }
+  .hint-box {
+    background: #f4f4f2;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.6;
+  }
+  textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    line-height: 1.7;
+    resize: vertical;
+    min-height: 80px;
+    transition: border .15s;
+  }
+  textarea:focus { outline: none; border-color: #888; box-shadow: 0 0 0 2px rgba(0,0,0,.04); }
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .2s;
+    margin-top: 8px;
+  }
+  .submit-btn:hover { background: #333; }
+  .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
+  .submit-status {
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+    margin-top: 12px;
+    min-height: 20px;
+  }
+  .footer-note { text-align: center; font-size: 12px; color: #aaa; margin-top: 20px; }
+  .success-msg { display: none; text-align: center; padding: 40px 0; }
+  .success-msg .icon { font-size: 42px; margin-bottom: 12px; }
+  .success-msg h2 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .success-msg p { font-size: 14px; color: #777; }
+  .error-msg { color: #d44; font-size: 13px; margin-top: 8px; text-align: center; display: none; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="card" id="form-card">
+    <h1>向宇哥提问 · 匿名征集</h1>
+    <div class="subtitle">
+      GKN 团队正在做导师宇哥的数字分身蒸馏实验。<br>
+      我们想收集来自真正了解他的人——学生、合作者、朋友——的提问。<br>
+      你对他的好奇，就是最好的蒸馏材料。<br>
+      <br>
+      📌 匿名 · 约 5 分钟 · 你的问题会被选入后续连载向宇哥当面提问
+    </div>
+
+    <div class="section">
+      <div class="section-title">① 关于他的思维方式</div>
+      <div class="section-desc">宇哥做判断、分析问题时有什么让你印象深刻的习惯或特点？</div>
+      <div class="hint-box">💡 比如：他遇到一个陌生领域的问题时会怎么切入？他有没有什么独特的分析框架或提问方式？</div>
+      <textarea data-category="关于他的思维方式" placeholder="写下你的问题或观察…"></textarea>
+    </div>
+
+    <div class="section">
+      <div class="section-title">② 关于他的价值观与判断</div>
+      <div class="section-desc">你好奇他在哪些事情上的取舍或态度？</div>
+      <div class="hint-box">💡 比如：他如何看待"成功"？他对学术 vs 商业的选择有什么真实想法？他做过什么让你意外的决定？</div>
+      <textarea data-category="关于他的价值观与判断" placeholder="写下你的问题…"></textarea>
+    </div>
+
+    <div class="section">
+      <div class="section-title">③ 关于他与人的关系</div>
+      <div class="section-desc">作为学生或合作者，你对他与人相处的方式有什么好奇？</div>
+      <div class="hint-box">💡 比如：他如何指导/批评人？他信任什么样的人？他有没有什么"没说出口但你能感觉到"的东西？</div>
+      <textarea data-category="关于他与人的关系" placeholder="写下你的问题…"></textarea>
+    </div>
+
+    <div class="section">
+      <div class="section-title">④ 关于他的经历与底色</div>
+      <div class="section-desc">你一直想问但没合适机会问的——关于他个人经历、转折点、或任何"八卦但不过界"的问题。</div>
+      <div class="hint-box">💡 比如：他有没有某个时刻想过放弃？他年轻时是什么样的？他有没有一些不为人知的习惯或癖好？</div>
+      <textarea data-category="关于他的经历与底色" placeholder="写下你的问题…"></textarea>
+    </div>
+
+    <div class="section">
+      <div class="section-title">⑤ 自由提问</div>
+      <div class="section-desc">以上都没覆盖到？任何你想问宇哥的问题，写在这里。</div>
+      <textarea data-category="自由提问" placeholder="任何问题，不限主题…" style="min-height:100px"></textarea>
+    </div>
+
+    <button class="submit-btn" id="submitBtn" onclick="submitQuestions()">提交问题</button>
+    <div class="submit-status" id="status"></div>
+    <div class="error-msg" id="error"></div>
+    <div class="footer-note">提交即授权 GKN 团队在蒸馏实验中匿名使用你的提问</div>
+  </div>
+
+  <div class="card" id="success-card" style="display:none">
+    <div class="success-msg" style="display:block">
+      <div class="icon">✓</div>
+      <h2>已收到</h2>
+      <p id="success-detail">你的问题会在整理后用于向宇哥当面提问。<br>感谢你参与这次蒸馏实验。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+var SUBMIT_URL = '/api/submit';
+
+function brief(text) {
+  var t = text.replace(/[\n\r]+/g, ' ').trim();
+  if (t.length <= 80) return t;
+  var cut = t.lastIndexOf('。', 80);
+  if (cut > 20) return t.slice(0, cut + 1);
+  cut = t.lastIndexOf('？', 80);
+  if (cut > 20) return t.slice(0, cut + 1);
+  return t.slice(0, 77) + '…';
+}
+
+function submitQuestions() {
+  var textareas = document.querySelectorAll('textarea');
+  var records = [];
+  textareas.forEach(function(ta) {
+    var text = ta.value.trim();
+    if (text) {
+      records.push({
+        fields: {
+          Brief: brief(text),
+          'Your Question': text,
+          Category: ta.getAttribute('data-category')
+        }
+      });
+    }
+  });
+
+  if (records.length === 0) {
+    document.getElementById('error').style.display = 'block';
+    document.getElementById('error').textContent = '至少填一个问题再提交吧 :)';
+    return;
+  }
+
+  var btn = document.getElementById('submitBtn');
+  var status = document.getElementById('status');
+  var error = document.getElementById('error');
+  btn.disabled = true;
+  btn.textContent = '提交中…';
+  status.textContent = '正在发送 ' + records.length + ' 个问题…';
+  error.style.display = 'none';
+
+  fetch(SUBMIT_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ records: records })
+  }).then(function(r) {
+    return r.json().then(function(data) {
+      if (r.ok && data.ok) {
+        document.getElementById('form-card').style.display = 'none';
+        document.getElementById('success-card').style.display = 'block';
+        document.getElementById('success-detail').innerHTML =
+          '已收到 ' + records.length + ' 个问题。<br>整理后将用于向宇哥当面提问。<br>感谢你参与这次蒸馏实验。';
+      } else {
+        btn.disabled = false;
+        btn.textContent = '重试提交';
+        status.textContent = '';
+        error.style.display = 'block';
+        error.textContent = '提交失败，请稍后重试。';
+      }
+    });
+  }).catch(function() {
+    btn.disabled = false;
+    btn.textContent = '重试提交';
+    status.textContent = '';
+    error.style.display = 'block';
+    error.textContent = '网络异常，请检查连接后重试。';
+  });
+}
+</script>
+</body>
+</html>
